@@ -1,11 +1,11 @@
 const path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
-
+var outputDir =  path.join(__dirname, "docs");
 module.exports = {
     entry: "./src/main.js",
     output: {
-        path: __dirname + '/public',
+        path:  outputDir,
         filename: "bundle.js"
     },
     module: {
@@ -20,7 +20,7 @@ module.exports = {
         ])
     ],
     devServer: {
-      contentBase: path.join(__dirname, "public"),
+      contentBase:  outputDir,
       compress: true,
       port: 9000
     }
